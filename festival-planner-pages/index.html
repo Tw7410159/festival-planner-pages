@@ -370,7 +370,7 @@ function gen(){
     body=B[S.style];cta=inst?'立即下載，幾秒內送出。連結在個人檔案。':sc.passed?'連結在個人檔案。':`${cut} 前下單，趕上${h.zh}。連結在個人檔案。`;
   }
   const tags=L==='en'?[...h.tags,CAT_EN[p.cat]?CAT_EN[p.cat].replace(/[^A-Za-z]+/g,''):'',t&&!t.derived&&!CJK.test(t.kw)?t.kw.replace(/[^A-Za-z]+/g,''):'',MK[h.market].en.replace(/\s+/g,'')+'Shopping']:[h.zh,p.cat,t?t.zh:'',...h.tags];
-  S.gen={caption:op+'\n\n'+body+'\n\n'+cl[L],tags:[...new Set(tags.filter(Boolean))].map(x=>'#'+x.replace(/\s+/g,'')).join(' '),cta,visual:VIS[S.style]+'。語氣：'+TONE[S.tone][0]+'。',story:STORY[S.style]};
+  S.gen={caption:op+'\n\n'+body+'\n\n'+cl,tags:[...new Set(tags.filter(Boolean))].map(x=>'#'+x.replace(/\s+/g,'')).join(' '),cta,visual:VIS[S.style]+'。語氣：'+TONE[S.tone][0]+'。',story:STORY[S.style]};
 }
 function summaryText(){
   const h=H(S.hid),ps=S.sel.map(P).filter(Boolean),sc=sched(h.date,ps),t=curTrend();
